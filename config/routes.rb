@@ -29,7 +29,11 @@ Rails.application.routes.draw do
     resources :doses
   end
 
+  resources :doses, only: [:destroy]
+
   delete "doses/:id", to: "doses#destroy"
+
+  root to: "cocktails#index"
 
 
 

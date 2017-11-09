@@ -1,1 +1,15 @@
+<div class="container cover_photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= @cocktail.image %>')">
+  <h1><%= @cocktail.name %></h1>
+  <h2><%= @cocktail.description %></h2>
+  <ul>
+    <% @cocktail.doses.each do |dose| %>
+      <li><%= dose.description %> - <%= dose.ingredient.name %> <%= link_to "Remove dose", dose_path(dose), method: :delete %></li>
+    <% end %>
+  </ul>
+  <%= link_to new_cocktail_dose_path(@cocktail) do %>
+    <div class="btn btn-primary">Add a dose</div>
+  <% end %>
 
+
+
+</div>

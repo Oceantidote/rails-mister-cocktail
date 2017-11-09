@@ -1,0 +1,19 @@
+<%= render 'shared/banner' %>
+
+<div class="container">
+  <div class="row">
+    <% @cocktails.each_with_index do |cocktail, index| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cocktail.image %>');">
+          <h4 class="card-category"><%= cocktail.name %></h4>
+          <h6 class="card-description"><%= cocktail.description %></h6>
+          <div class="icon">
+            <%= link_to cocktail do %>
+                <i class="fa fa-glass" aria-hidden="true"></i>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

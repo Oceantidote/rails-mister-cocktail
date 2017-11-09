@@ -6,6 +6,7 @@ before_action :set_cocktail, only: [:show, :edit, :update, :destroy]
     @cocktails = Cocktail.all
   end
 
+
   def show
   end
 
@@ -40,7 +41,7 @@ before_action :set_cocktail, only: [:show, :edit, :update, :destroy]
 
 
   def cocktail_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :image, :description)
   end
 
   def set_cocktail
